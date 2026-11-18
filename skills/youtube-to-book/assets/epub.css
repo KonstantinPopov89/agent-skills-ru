@@ -1,0 +1,57 @@
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.56;
+  margin: 5%;
+  color: #17191c;
+}
+
+h1 {
+  break-before: page;
+  page-break-before: always;
+  margin: 20% 0 2.3em;
+  text-align: center;
+  font-size: 1.65em;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 2.4em 0 1em;
+  font-size: 1.18em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  text-align: left;
+  text-indent: 1.25em;
+  orphans: 3;
+  widows: 3;
+}
+
+h1 + p,
+h2 + p,
+section > p:first-of-type {
+  text-indent: 0;
+}
+
+blockquote {
+  margin: 1.25em 1.4em;
+  font-style: italic;
+}
+
+blockquote p {
+  text-indent: 0;
+}
+
+nav ol {
+  line-height: 1.65;
+}
+
+.subtitle {
+  margin-top: 1.2em;
+}
+
+.source-note {
+  font-size: 0.9em;
+  color: #555b62;
+}

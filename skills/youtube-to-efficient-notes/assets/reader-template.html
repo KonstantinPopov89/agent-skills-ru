@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="@@LANG@@" xml:lang="@@LANG@@">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>@@TITLE@@</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">
+
+:root { color-scheme: dark; --reader-size: 21px; --toolbar-height: 65px; }
+* { box-sizing: border-box; }
+html { background: #000; color: #fff; scroll-padding-top: calc(var(--toolbar-height) + 24px); overflow-anchor: none; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: #000; color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: var(--reader-size); line-height: 1.6; font-weight: 400; }
+main { width: calc(100% - 40px); max-width: 66ch; margin: 0 auto; padding: 36px 0 80px; }
+h1, h2, h3 { font-weight: 700; text-align: left; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; break-after: avoid; }
+h1 { font-size: 1.45em; margin: 2.4em 0 .85em; }
+h2 { font-size: 1.2em; margin: 1.8em 0 .75em; }
+h3 { font-size: 1.05em; margin: 1.4em 0 .6em; }
+h1.title { font-size: clamp(28px, 3.3vw, 38px); line-height: 1.22; margin: 0 0 26px; }
+.author { font-size: .85em; margin-bottom: .3em; }
+#title-block-header { margin-bottom: 38px; }
+p { margin: 0 0 .85em; text-align: left; text-indent: 0; overflow-wrap: break-word; orphans: 3; widows: 3; }
+h1 + p { margin-bottom: 1.2em; }
+li { margin-bottom: .65em; overflow-wrap: anywhere; }
+ul, ol { padding-left: 1.5em; }
+blockquote { margin: 1em 0 1em 1.2em; }
+a { color: #fff; text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+h1:focus { outline: none; }
+::selection { color: #000; background: #fff; }
+small, .source-note, .subtitle, .footnotes { color: #fff; }
+.footnotes { font-size: .92em; border-top: 1px solid #555; margin-top: 2.4em; padding-top: 1.2em; }
+.footnotes p { margin-bottom: .8em; }
+.footnote-ref, .footnote-back { padding: .15em; }
+img, svg { max-width: 100%; height: auto; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+code { font-family: monospace; font-size: .92em; }
+table { border-collapse: collapse; width: 100%; font-size: .9em; }
+th, td { border-bottom: 1px solid #555; padding: .4em; text-align: left; }
+thead { border-top: 1px solid #aaa; }
+.reader-toolbar { display: none; }
+.js-reader .reader-toolbar { display: block; position: sticky; top: 0; z-index: 5; background: #000; border-bottom: 1px solid #333; padding-top: env(safe-area-inset-top); }
+.toolbar-inner { width: calc(100% - 40px); max-width: 66ch; margin: auto; display: flex; align-items: center; gap: 8px; min-height: 64px; }
+button { color: #fff; background: #000; border: 1px solid #666; border-radius: 5px; min-height: 44px; min-width: 44px; padding: 8px 12px; font: 500 15px/1.25 "Helvetica Neue", Helvetica, Arial, sans-serif; cursor: pointer; }
+button:hover { border-color: #fff; }
+button:disabled { color: #aaa; cursor: default; }
+.size-controls { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+.size-value { min-width: 30px; text-align: center; font-size: 14px; font-variant-numeric: tabular-nums; }
+.skip-link { position: absolute; left: 20px; top: -200px; z-index: 10; background: #000; padding: 10px; }
+.skip-link:focus { top: 8px; }
+#reader-toc { border-top: 1px solid #555; border-bottom: 1px solid #555; padding: 12px 0; margin-bottom: 2em; }
+#reader-toc summary { cursor: pointer; min-height: 44px; display: list-item; padding: 6px 0; font-size: .9em; }
+.js-reader #reader-toc { display: none; }
+#TOC { font-size: .9em; }
+#TOC ul { margin: 1em 0 0; padding: 0; list-style: none; }
+#TOC li { margin: 0; }
+#TOC a { display: block; min-height: 44px; padding: 9px 0; text-decoration-thickness: 1px; }
+#TOC a[aria-current="location"] { font-weight: 700; text-decoration-thickness: 2px; }
+dialog { width: min(720px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; color: #fff; background: #000; border: 1px solid #777; border-radius: 6px; font: inherit; }
+dialog::backdrop { background: rgb(0 0 0 / .75); }
+.toc-dialog-header { position: sticky; top: 0; background: #000; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #333; }
+.toc-dialog-header p { margin: 0; font-size: 18px; font-weight: 700; }
+.toc-dialog-content { padding: 0 24px 24px; }
+body.toc-open { overflow: hidden; }
+@media (max-width: 600px) {
+  :root { --reader-size: 19px; }
+  main { padding-top: 28px; }
+  h1 { font-size: 1.35em; }
+  .toolbar-inner { gap: 6px; }
+  button { padding: 8px 10px; }
+  .toc-dialog-header { padding: 12px 16px; }
+  .toc-dialog-content { padding: 0 18px 20px; }
+}
+@media print {
+  html, body { background: #fff; color: #000; }
+  a, .footnotes, small, .source-note, .subtitle { color: #000; }
+  .reader-toolbar, .skip-link, dialog { display: none !important; }
+  .js-reader #reader-toc { display: block; }
+  main { width: 100%; max-width: none; padding: 0; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#book">Перейти к тексту</a>
+<div class="reader-toolbar" role="region" aria-label="Настройки чтения">
+  <div class="toolbar-inner">
+    <button id="toc-button" type="button" aria-haspopup="dialog" aria-controls="toc-dialog">Оглавление</button>
+    <div class="size-controls" role="group" aria-label="Размер текста">
+      <button id="size-down" type="button" aria-label="Уменьшить текст">A−</button>
+      <output id="size-value" class="size-value" aria-label="Размер текста в пикселях" aria-live="polite"></output>
+      <button id="size-up" type="button" aria-label="Увеличить текст">A+</button>
+    </div>
+  </div>
+</div>
+<main id="book" tabindex="-1">
+<header id="title-block-header">
+<h1 class="title">@@TITLE@@</h1>
+<p class="subtitle">@@SUBTITLE@@</p>
+</header>
+<details id="reader-toc"><summary>@@TOC_LABEL@@</summary>@@TOC@@</details>
+@@CONTENT@@
+</main>
+<dialog id="toc-dialog" aria-labelledby="toc-dialog-title">
+  <div class="toc-dialog-header">
+    <p id="toc-dialog-title">@@TOC_LABEL@@</p>
+    <button id="toc-close" type="button" aria-label="Закрыть оглавление">Закрыть</button>
+  </div>
+  <div id="toc-dialog-content" class="toc-dialog-content"></div>
+</dialog>
+<script>
+(() => {
+  const dialog = document.getElementById('toc-dialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const root = document.documentElement;
+  const toolbar = document.querySelector('.reader-toolbar');
+  const openButton = document.getElementById('toc-button');
+  const closeButton = document.getElementById('toc-close');
+  const toc = document.getElementById('TOC');
+  const details = document.getElementById('reader-toc');
+  const down = document.getElementById('size-down');
+  const up = document.getElementById('size-up');
+  const output = document.getElementById('size-value');
+  const storageKey = @@STORAGE_KEY_JSON@@;
+  const MIN = 17, MAX = 28;
+  let preferredSize = null, targetAfterClose = null;
+  try {
+    const stored = Number(localStorage.getItem(storageKey));
+    if (Number.isFinite(stored) && stored >= MIN && stored <= MAX) preferredSize = stored;
+  } catch (_) {}
+  root.classList.add('js-reader');
+  function currentSize() { return Number.parseFloat(getComputedStyle(document.body).fontSize); }
+  function showSize() {
+    const size = currentSize();
+    output.value = String(size);
+    down.disabled = size <= MIN;
+    up.disabled = size >= MAX;
+  }
+  function setSize(size) {
+    // Keep the visible paragraph anchored while resizing.
+    const offset = toolbar.getBoundingClientRect().height + 18;
+    let anchor = document.elementFromPoint(innerWidth / 2, offset);
+    if (anchor) anchor = anchor.closest('p, h1, h2, h3, li');
+    if (!anchor) anchor = [...document.querySelectorAll('#book > p, #book > h1, .footnotes li')].find(n => n.getBoundingClientRect().bottom > offset);
+    const before = anchor ? anchor.getBoundingClientRect().top : null;
+    preferredSize = Math.min(MAX, Math.max(MIN, size));
+    root.style.setProperty('--reader-size', preferredSize + 'px');
+    showSize();
+    if (anchor && before !== null) window.scrollBy(0, anchor.getBoundingClientRect().top - before);
+    try { localStorage.setItem(storageKey, String(preferredSize)); } catch (_) {}
+  }
+  if (preferredSize !== null) root.style.setProperty('--reader-size', preferredSize + 'px');
+  showSize();
+  down.addEventListener('click', () => setSize(currentSize() - 1));
+  up.addEventListener('click', () => setSize(currentSize() + 1));
+  function openToc() {
+    const headings = [...document.querySelectorAll('#book > h1[id]')];
+    const current = headings.filter(h => h.getBoundingClientRect().top <= toolbar.getBoundingClientRect().height + 40).pop();
+    document.getElementById('toc-dialog-content').append(toc);
+    targetAfterClose = null;
+    dialog.showModal();
+    document.body.classList.add('toc-open');
+    const links = [...toc.querySelectorAll('a')];
+    links.forEach(link => link.removeAttribute('aria-current'));
+    if (current) {
+      const selected = links.find(link => decodeURIComponent(link.hash.slice(1)) === current.id);
+      if (selected) { selected.setAttribute('aria-current', 'location'); selected.scrollIntoView({block: 'center'}); }
+    } else dialog.scrollTop = 0;
+    closeButton.focus({preventScroll: true});
+  }
+  openButton.addEventListener('click', openToc);
+  function closeToc() {
+    dialog.close();
+    document.body.classList.remove('toc-open');
+    details.append(toc);
+    if (targetAfterClose) {
+      targetAfterClose.setAttribute('tabindex', '-1');
+      targetAfterClose.focus({preventScroll: true});
+      targetAfterClose.scrollIntoView({block: 'start'});
+    } else openButton.focus({preventScroll: true});
+    targetAfterClose = null;
+  }
+  closeButton.addEventListener('click', closeToc);
+  dialog.addEventListener('cancel', event => { event.preventDefault(); closeToc(); });
+  toc.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || !dialog.open) return;
+    const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    if (!target) return;
+    event.preventDefault();
+    targetAfterClose = target;
+    history.replaceState(null, '', link.hash);
+    closeToc();
+  });
+  if (typeof ResizeObserver === 'function') new ResizeObserver(() => {
+    root.style.setProperty('--toolbar-height', Math.ceil(toolbar.getBoundingClientRect().height) + 'px');
+    showSize();
+  }).observe(toolbar);
+  window.addEventListener('resize', showSize);
+})();
+</script>
+
+</body>
+</html>

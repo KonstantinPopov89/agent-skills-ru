@@ -1,0 +1,4 @@
+interface:
+  display_name: "Эффективный конспект с мини-кейсами"
+  short_description: "Сжатые формулировки, все смыслы и истории в HTML"
+  default_prompt: "Используй $youtube-to-efficient-notes: сделай полный конспект с мини-кейсами в HTML по указанному источнику."

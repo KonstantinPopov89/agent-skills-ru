@@ -1,0 +1,6 @@
+interface:
+  display_name: "Проверка на адекватность"
+  short_description: "Проверка смысла и пригодности готового результата"
+  default_prompt: "Используй $adequacy-check: проверь пригодность результата для моей задачи, исправь подтвержденные ошибки и кратко покажи, что изменилось."
+policy:
+  allow_implicit_invocation: true

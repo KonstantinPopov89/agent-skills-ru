@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "input": {
+    "format": "json_array"
+  },
+  "source": {
+    "description": "Synthetic two-row teaching example",
+    "evidence": [
+      "Bundled examples/rows.json and this scenario definition"
+    ]
+  },
+  "assumptions": [
+    "Amounts are expressed in EUR units; tickets counts completed receipts. The example covers only the two included rows."
+  ],
+  "scope": {
+    "kind": "observed_export_only",
+    "completeness": "confirmed",
+    "evidence": [
+      "Both rows are all rows of the supplied teaching array"
+    ]
+  },
+  "granularity": {
+    "description": "One aggregate for a synthetic register on each listed date",
+    "contract_status": "confirmed",
+    "evidence": [
+      "Bundled synthetic scenario definition"
+    ]
+  },
+  "fields": {
+    "date": "day",
+    "account": "register",
+    "gross": "sales",
+    "returns": "refunded",
+    "net": "balance",
+    "receipts": "tickets"
+  },
+  "date_format": "%Y-%m-%d",
+  "money": {
+    "currency": "EUR",
+    "unit": "euros"
+  },
+  "period": {
+    "start": "2030-01-05",
+    "end": "2030-01-06",
+    "assert_all_rows_within": true
+  },
+  "contract": {
+    "gross_minus_returns_equals_net": {
+      "asserted": true,
+      "tolerance": "0.01",
+      "evidence": [
+        "Here balance is defined as sales minus refunded"
+      ]
+    },
+    "receipts": {
+      "integer": true,
+      "nonnegative": true,
+      "evidence": [
+        "Here tickets counts completed receipts"
+      ]
+    }
+  },
+  "mean_decimal_places": 6
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "base_root": "../youtube-to-book",
+  "files": {
+    "SKILL.md": "e9b0c65fdc140ee271b79dfa8266d52c698d5d031fd1d8e0af516a852bb3f8a8",
+    "agents/openai.yaml": "1bd00305db812f504376a2703cf5883a0df23a2e2aec1f671a9bac99541afb6f",
+    "assets/cover-template.svg": "ba4f9f202c6727a17c4f11936ea4eb0d442b3d735aa13b3492beba454ce394a1",
+    "assets/epub.css": "00986c2dccf59f37c81430e20396f1e3af672132c12b24258c6bfeb76ef3e313",
+    "references/editing-contract.md": "de6f975bf987d1e7091da54245bc9ff071945a33472c819030a09671c0e06afb",
+    "scripts/build_epub.sh": "0bbbdfd42a50306a284494371b0fdd43f4b39e0a99362a93d962937acbb50ca5",
+    "scripts/chunk_transcript.py": "83868449cfe9905cd4de4d7e2b3ffdb0e7db4f75c6ca9751c4808953369b7a82",
+    "scripts/extract_frames.py": "a969601f50ef9dd6bfa678e07b9c39c5cc4c24dc6ee2f7c4c72313387ebe343f",
+    "scripts/fetch_video.sh": "ef9f5699f7fe7d2c7748d401c73d6bf7c8e3506a6be90efecb6fb01f4337b3ca",
+    "scripts/gigaam_longform.py": "1c609784186a38ee8d9837b20cf3de101febc2d53687e97e6ffe66bd0a2a2e00",
+    "scripts/make_cover.sh": "723a29e5efc03ce2b1f0e0381d85480eb66a3bbadfa20a01d83028cbd10ec3da",
+    "scripts/preflight.sh": "7ed2e119863bb6c866d9a7ae083680c6a130d2661a66c2155da65621347e686e",
+    "scripts/transcribe.sh": "9de17ee501c6bc8bdb6dd5a9689bba159da53eb91623f585ec9a1dd87860e137"
+  }
+}

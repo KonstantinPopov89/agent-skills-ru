@@ -1,0 +1,135 @@
+{
+  "adequacy-check": {
+    "role": "featured",
+    "requires": [
+      "knowledge-perspectives"
+    ]
+  },
+  "fresh-eyes": {
+    "role": "featured",
+    "requires": [
+      "adequacy-check",
+      "knowledge-perspectives",
+      "outside-of-the-box",
+      "pizdej-check"
+    ]
+  },
+  "grill-me": {
+    "role": "companion",
+    "requires": [
+      "grilling"
+    ]
+  },
+  "grilling": {
+    "role": "companion",
+    "requires": []
+  },
+  "handoff": {
+    "role": "featured",
+    "requires": []
+  },
+  "idea-scout": {
+    "role": "featured",
+    "requires": [
+      "fresh-eyes"
+    ]
+  },
+  "knowledge-perspectives": {
+    "role": "featured",
+    "requires": []
+  },
+  "krasinsky-task": {
+    "role": "featured",
+    "requires": [
+      "adequacy-check",
+      "fresh-eyes",
+      "natural-writing-ru",
+      "outcome-task",
+      "outside-of-the-box"
+    ]
+  },
+  "minimalist-book-pdf": {
+    "role": "featured",
+    "requires": [
+      "minimalist-guide-pdf"
+    ]
+  },
+  "minimalist-guide-pdf": {
+    "role": "featured",
+    "requires": [
+      "minimalist-book-pdf"
+    ]
+  },
+  "natural-writing-ru": {
+    "role": "featured",
+    "requires": []
+  },
+  "outcome-task": {
+    "role": "featured",
+    "requires": [
+      "adequacy-check",
+      "fresh-eyes",
+      "grill-me",
+      "natural-writing-ru",
+      "outside-of-the-box",
+      "pizdej-check"
+    ]
+  },
+  "outside-of-the-box": {
+    "role": "featured",
+    "requires": [
+      "knowledge-perspectives"
+    ]
+  },
+  "pizdej-check": {
+    "role": "featured",
+    "requires": []
+  },
+  "retelling-extraction": {
+    "role": "featured",
+    "requires": [
+      "youtube-to-book",
+      "youtube-to-efficient-book",
+      "youtube-to-efficient-notes",
+      "youtube-to-efficient-summary"
+    ]
+  },
+  "shared-agent-memory": {
+    "role": "featured",
+    "requires": []
+  },
+  "vyvody": {
+    "role": "featured",
+    "requires": [
+      "fresh-eyes",
+      "grilling",
+      "natural-writing-ru"
+    ]
+  },
+  "youtube-to-book": {
+    "role": "companion",
+    "requires": [
+      "youtube-to-efficient-book"
+    ]
+  },
+  "youtube-to-efficient-book": {
+    "role": "companion",
+    "requires": [
+      "youtube-to-book"
+    ]
+  },
+  "youtube-to-efficient-notes": {
+    "role": "companion",
+    "requires": [
+      "youtube-to-book"
+    ]
+  },
+  "youtube-to-efficient-summary": {
+    "role": "companion",
+    "requires": [
+      "youtube-to-book",
+      "youtube-to-efficient-book",
+      "youtube-to-efficient-notes"
+    ]
+  }
+}

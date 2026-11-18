@@ -1,0 +1,6 @@
+interface:
+  display_name: "С каких сторон посмотреть на вопрос"
+  short_description: "Подобрать направления и школы мысли и показать вклад каждого подхода"
+  default_prompt: "Примени $knowledge-perspectives. Перечисли уместные направления, школы мысли, области знаний и аспекты моего вопроса. Поясни, что добавляет каждый."
+policy:
+  allow_implicit_invocation: true

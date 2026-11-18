@@ -1,0 +1,7 @@
+interface:
+  display_name: "Проверка на пиздёж"
+  short_description: "Доказательная проверка выводов и готовности"
+  default_prompt: "Используй $pizdej-check, чтобы критически проверить этот результат и сказать, можно ли использовать его как есть."
+
+policy:
+  allow_implicit_invocation: true

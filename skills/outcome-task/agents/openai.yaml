@@ -1,0 +1,6 @@
+interface:
+  display_name: "Постановка через результат"
+  short_description: "Переводит запрос в проверяемую карточку поручения"
+  default_prompt: "Примени $outcome-task. Перепиши задачу в проверяемую карточку и верни ее мне."
+policy:
+  allow_implicit_invocation: false

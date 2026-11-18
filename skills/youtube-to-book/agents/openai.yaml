@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube → литературная книга"
+  short_description: "GigaAM/Whisper + просмотр кадров + литредактура + EPUB"
+  default_prompt: "Составь подробную литературную книгу из этой записи. Сохрани примеры и голоса участников, собери EPUB."

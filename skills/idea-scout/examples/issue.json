@@ -1,0 +1,10 @@
+{
+  "key": "demo-week",
+  "date": "2030-01-07",
+  "trigger": "phrase",
+  "period": "2030-01-01 through 2030-01-07",
+  "sources": {"workshop": "two synthetic notes dated 3 and 6 January"},
+  "ideas": [
+    {"move": 2, "title": "Проверить импорт номеров из формы бронирования", "locators": ["examples/notes.md M1", "examples/notes.md M2"]}
+  ]
+}

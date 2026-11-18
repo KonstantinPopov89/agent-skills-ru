@@ -1,0 +1,68 @@
+<!--
+  Шаблон обложки книги, 1600×2560 (соотношение 5:8).
+
+  Как пользоваться:
+   1. Скопировать в каталог книги как cover.svg.
+   2. Положить рядом кадр из frames/ под именем cover-source.jpg — он станет подложкой.
+      Годится кадр с фактурой (студия, интерфейс, кадр из игры), а не крупный текст.
+   3. Заменить {{...}} на свои значения. Один-два слова заголовка выделить цветом акцента.
+   4. Подобрать акцентный цвет под тему: #4fc3ef холодный, #f2a03d тёплый,
+      #7ee081 «зелёный» научпоп, #e0576b острое интервью.
+   5. Отрендерить: scripts/make_cover.sh cover.svg
+
+  Заголовок — до трёх строк. Если длиннее, сокращать заголовок, а не кегль:
+  мелкий шрифт на обложке в списке книг не читается.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1600" height="2560" viewBox="0 0 1600 2560">
+  <defs>
+    <filter id="soften" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4"/>
+      <feColorMatrix type="saturate" values="0.6"/>
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.7"/>
+        <feFuncG type="linear" slope="0.74"/>
+        <feFuncB type="linear" slope="0.82"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1216" stop-opacity="0.97"/>
+      <stop offset="0.5" stop-color="#0e1216" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#0e1216" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="shade2" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#0e1216" stop-opacity="0.55"/>
+      <stop offset="0.35" stop-color="#0e1216" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="frame"><rect x="0" y="0" width="1600" height="2560"/></clipPath>
+  </defs>
+
+  <rect width="1600" height="2560" fill="#0e1216"/>
+  <g clip-path="url(#frame)">
+    <image x="-460" y="900" width="2520" height="1500"
+           xlink:href="cover-source.jpg"
+           preserveAspectRatio="xMidYMid slice" filter="url(#soften)"/>
+    <rect width="1600" height="2560" fill="url(#shade)"/>
+    <rect width="1600" height="2560" fill="url(#shade2)"/>
+    <rect x="0" y="0" width="32" height="2560" fill="#4fc3ef"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#f7f5ef">
+    <!-- кикер: канал или тема -->
+    <text x="136" y="190" font-size="38" font-weight="700" letter-spacing="2">{{КИКЕР}}</text>
+    <line x1="136" y1="236" x2="1464" y2="236" stroke="#4fc3ef" stroke-width="8"/>
+
+    <!-- заголовок: 2–3 строки, одно слово акцентным цветом -->
+    <text x="136" y="580" font-size="112" font-weight="800">{{ЗАГОЛОВОК СТРОКА 1}}</text>
+    <text x="136" y="730" font-size="112" font-weight="800" fill="#4fc3ef">{{ЗАГОЛОВОК СТРОКА 2}}</text>
+
+    <!-- подзаголовок: 1–2 строки -->
+    <text x="142" y="900" font-size="48" fill="#d8dde4">{{ПОДЗАГОЛОВОК СТРОКА 1}}</text>
+    <text x="142" y="966" font-size="48" fill="#d8dde4">{{ПОДЗАГОЛОВОК СТРОКА 2}}</text>
+
+    <rect x="136" y="2160" width="1328" height="2" fill="#f7f5ef" opacity="0.45"/>
+    <text x="136" y="2265" font-size="48" font-weight="700">{{АВТОР}}</text>
+    <text x="136" y="2335" font-size="38" fill="#d8dde4">{{ВТОРАЯ СТРОКА АВТОРА}}</text>
+    <text x="136" y="2440" font-size="34" font-weight="700" fill="#4fc3ef">ЛИТЕРАТУРНАЯ ВЕРСИЯ · {{ДАТА}}</text>
+  </g>
+</svg>
